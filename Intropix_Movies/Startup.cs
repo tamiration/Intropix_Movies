@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Intropix_Movies.Models;
 
 namespace Intropix_Movies
 {
@@ -33,6 +35,9 @@ namespace Intropix_Movies
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<Intropix_MoviesContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Intropix_MoviesContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
