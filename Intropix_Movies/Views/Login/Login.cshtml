@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,46 +20,16 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <span class="navbar-brand navbar-right">שלום @ViewData["username"] </span>
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Intropix_Movies</a>
-            @if ((ViewData["username"] != null))
-            {
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        @if ((true == false))
-                        {
-                            <li><a asp-area="" asp-controller="Users" asp-action="Index">Users</a></li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-    </nav>
+<body class="text-center login-container ">
+        <form method="post" class="form-signin">
+            <div class="form-group">
+                <h1 class="h2 mb-3 font-weight-normal headline">Sign in</h1>
+                <input id="username" name="username" type="text" class="form-control" placeholder="username" required autofocus />
+                <input id="password" name="password" type="password" class="form-control" placeholder="password" required />
 
-    <partial name="_CookieConsentPartial" />
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Intropix_Movies</p>
-        </footer>
-    </div>
-
+                <input asp-controller="Login" asp-action="LoginClicked" asp-route-username="username" asp-route-password="password" type="submit" value="כניסה" class="btn btn-lg btn-primary btn-block" />
+            </div>
+        </form>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -77,7 +50,5 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
-    @RenderSection("Scripts", required: false)
 </body>
 </html>

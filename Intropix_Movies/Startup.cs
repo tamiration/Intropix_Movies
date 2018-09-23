@@ -32,7 +32,7 @@ namespace Intropix_Movies
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddSession();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -56,11 +56,15 @@ namespace Intropix_Movies
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
+                    template: "{controller=Login}/{action=Login}/{id?}");
+                routes.MapRoute(
+                    name: "Home",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
