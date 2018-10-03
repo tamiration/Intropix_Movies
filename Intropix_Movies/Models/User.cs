@@ -13,6 +13,7 @@ namespace Intropix_Movies.Models
         public string Password { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
+        [Display(Name = "Email")]
         public string EMail { get; set; }
         public DateTime RegistrationDate { get; set; }
         public int Is_Manager { get; set; }

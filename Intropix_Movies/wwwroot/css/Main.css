@@ -2,20 +2,25 @@
     background-image: url("/images/wallpaper.jpg");
 }
 
+.link {
+    cursor: pointer;
+    color: cornflowerblue;
+}
 
 .headline {
-    color:white;
+    color: white;
     text-shadow: 1px 1px 1px black;
     margin: 20px 0;
 }
+
 .form-signin {
     width: 100%;
     max-width: 330px;
     padding: 15px;
     margin: auto;
-    /*background: radial-gradient(#ffffff,#000000 );*/
-    border:2px solid darkgray;
-    border-radius:20px;
+    border: 2px solid darkgray;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
     .form-signin .checkbox {

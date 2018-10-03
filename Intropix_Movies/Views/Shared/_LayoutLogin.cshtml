@@ -1,12 +1,5 @@
-﻿
-@using Microsoft.AspNetCore.Http
-@using Intropix_Movies.Helpers;
-@inject IHttpContextAccessor HttpContextAccessor
-@{
-    var user = HttpContextAccessor.HttpContext.Session.GetObject<User>("user");
-    ViewData["username"] = user != null ? user.Username : "אורח";
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -25,47 +18,10 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <span class="navbar-brand navbar-right"> שלום  </span>
-            <span class="navbar-brand navbar-right">@ViewData["username"]</span>
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Intropix_Movies</a>
-            @if ((ViewData["username"] != null))
-            {
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        @if ((true == false))
-                        {
-                            <li><a asp-area="" asp-controller="Users" asp-action="Index">Users</a></li>
-                        }
-                    </ul>
-                </div>
-            }
-        </div>
-    </nav>
-
-    <partial name="_CookieConsentPartial" />
-
+<body class="text-center login-container ">
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - Intropix_Movies</p>
-        </footer>
     </div>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -86,7 +42,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

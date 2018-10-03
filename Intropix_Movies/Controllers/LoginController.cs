@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Intropix_Movies.Helpers;
 using Intropix_Movies.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -29,20 +30,26 @@ namespace Intropix_Movies.Controllers
             return View();
         }
 
+        public ActionResult Signup()
+        {
+            return RedirectToAction("Signup");
+        }
+
         [HttpPost]
         public ActionResult LoginClicked(string username, string password)
         {
             User user = _context.User.Where(s => s.Username == username && s.Password == password).FirstOrDefault();
             if (user == null)
             {
-                ViewData["LoginMessage"] = "authentication error";
+                ViewData["LoginMessage"] = "User not found.";
                 return View("Login");
             }
-            HttpContext.Session.SetString("username", username);
-          //  ViewData["User"] = user;
-          //  ViewData["username"] = username;
-            return  RedirectToAction("Index", "Home");
-          //  return View("Home");
+            SessionExtender.SetObject(HttpContext.Session, "user", user);
+            //HttpContext.Session.SetString("username", username);
+            //  ViewData["User"] = user;
+            //  ViewData["username"] = username;
+            return RedirectToAction("Index", "Home");
+            //  return View("Home");
         }
 
         // GET: Login/Details/5

@@ -33,6 +33,7 @@ namespace Intropix_Movies
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddSession();
+            services.AddHttpContextAccessor();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 

@@ -6,13 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Intropix_Movies.Models;
+using Intropix_Movies.Helpers;
 
 namespace Intropix_Movies.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IHttpContextAccessor httpContextAccessor;
+
+        public HomeController(IHttpContextAccessor httpContextAccessor)
+        {
+            this.httpContextAccessor = httpContextAccessor;
+        }
+
         public IActionResult Index()
         {
+            User user = SessionExtender.GetObject<User>(HttpContext.Session, "user");
             ViewData["username"] = HttpContext.Session.GetString("username");
             return View();
         }
