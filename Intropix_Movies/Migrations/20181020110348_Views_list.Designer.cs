@@ -4,14 +4,16 @@ using Intropix_Movies.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Intropix_Movies.Migrations
 {
     [DbContext(typeof(Intropix_MoviesContext))]
-    partial class Intropix_MoviesContextModelSnapshot : ModelSnapshot
+    [Migration("20181020110348_Views_list")]
+    partial class Views_list
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,28 +21,6 @@ namespace Intropix_Movies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Intropix_Movies.Models.User", b =>
-                {
-                    b.Property<string>("Username")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Age");
-
-                    b.Property<string>("EMail");
-
-                    b.Property<int>("Is_Manager");
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("Password");
-
-                    b.Property<DateTime>("RegistrationDate");
-
-                    b.HasKey("Username");
-
-                    b.ToTable("User");
-                    
-                                    });
             modelBuilder.Entity("Intropix_Movies.Models.Studio", b =>
                 {
                     b.Property<int>("ID")
@@ -101,7 +81,6 @@ namespace Intropix_Movies.Migrations
 
                     b.ToTable("Views_List");
                 });
-
 #pragma warning restore 612, 618
         }
     }

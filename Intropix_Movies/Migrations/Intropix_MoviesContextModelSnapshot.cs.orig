@@ -19,6 +19,7 @@ namespace Intropix_Movies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+<<<<<<< HEAD
             modelBuilder.Entity("Intropix_Movies.Models.User", b =>
                 {
                     b.Property<string>("Username")
@@ -39,8 +40,7 @@ namespace Intropix_Movies.Migrations
                     b.HasKey("Username");
 
                     b.ToTable("User");
-                    
-                                    });
+=======
             modelBuilder.Entity("Intropix_Movies.Models.Studio", b =>
                 {
                     b.Property<int>("ID")
@@ -100,8 +100,8 @@ namespace Intropix_Movies.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Views_List");
+>>>>>>> github/views_list
                 });
-
 #pragma warning restore 612, 618
         }
     }

@@ -6,7 +6,10 @@
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
+<<<<<<< HEAD
     "Intropix_MoviesContext": "Server=(localdb)\\mssqllocaldb;Database=Intropix_MoviesContext-43f3399c-0708-4598-ae3f-c9663a4ce96f;Trusted_Connection=True;MultipleActiveResultSets=true"
-    
+=======
+    "Intropix_MoviesContext": "Server=(localdb)\\mssqllocaldb;Database=Intropix_MoviesContext-d70c1001-d255-46da-bdc6-a9bdd85e8500;Trusted_Connection=True;MultipleActiveResultSets=true"
+>>>>>>> github/views_list
   }
 }
