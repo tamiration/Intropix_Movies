@@ -31,6 +31,11 @@ namespace Intropix_Movies.Controllers
             return View();
         }
 
+        public IActionResult GoogleMap()
+        {
+            return View();
+        }
+
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
