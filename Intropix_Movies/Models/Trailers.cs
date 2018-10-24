@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 
 namespace Intropix_Movies.Models
 {
-   
- 
         public class Trailers
         {
             public int ID { get; set; }

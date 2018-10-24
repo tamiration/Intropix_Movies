@@ -11,27 +11,42 @@
     <h1>Studio Location</h1>
 </head>
 <body>
-    <div id="map"></div>
-    <script>
-        function initMap() {
-            var myLatLng = { lat: 31.771959, lng: 35.217018 };
-
-            // Create a map object and specify the DOM element
-            // for display.
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: myLatLng,
-                zoom: 4
-            });
-
-            // Create a marker and set its position.
-            var marker = new google.maps.Marker({
-                map: map,
-                position: myLatLng,
-                title: 'First Marker'
-            });
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<script>
+    function avMap() {
+        var myCanvas = document.getElementById('map1');
+        var mapCenter = new google.maps.LatLng(6.949707, 80.1831939);
+        var mapOptions = {
+            center: mapCenter,
+            zoom: 11,
+            mapTypeId: google.maps.MapTypeId.ROADMAP //SATELLITE, HYBRID, TERRAIN
+        };
+        var mapAv = new google.maps.Map(myCanvas, mapOptions);
+        var marker1 = new google.maps.Marker({
+            position: mapCenter,
+            animation: google.maps.Animation.BOUNCE,
+            draggable: false
+        });
+        marker1.setMap(mapAv);
+        var marker2 = new google.maps.Marker({
+            position: {
+                lat: 6.4692368,
+                lng: 80.5755751
+            },
+            animation: google.maps.Animation.DROP,
+            draggable: false
+        });
+        marker2.setMap(mapAv);
+        //info-window
+        var avNote = "<p>" + "Avissawella is the most beautiful area in Sabaragamuwa/Western border." + " " + "For more details, please visit" +
+            " " + "<a href='https://en.wikipedia.org/wiki/Avissawella'" + "target='_blank'>" + "this link" + "</a>";
+        var infoWin = new google.maps.InfoWindow({
+            content: avNote,
+            maxWidth: 200
+        });
+        infoWin.open(mapAv, marker1);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=avMap" async defer></script>
+<div id="map1"></div>
 </body>
 </html>
