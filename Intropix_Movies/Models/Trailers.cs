@@ -19,7 +19,8 @@ namespace Intropix_Movies.Models
             public string Source_link { get; set; }
             public string Summary { get; set; }
             public int Rating { get; set; }
-            public string filming_location { get; set; }
+            public double Lat { get; set; }
+            public double Lon { get; set; }
             public int Studio_id { get; set; }
         }
 

@@ -4,14 +4,16 @@ using Intropix_Movies.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Intropix_Movies.Migrations
 {
     [DbContext(typeof(Intropix_MoviesContext))]
-    partial class Intropix_MoviesContextModelSnapshot : ModelSnapshot
+    [Migration("20181024182215_remove_filmLocation_addLatLon")]
+    partial class remove_filmLocation_addLatLon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

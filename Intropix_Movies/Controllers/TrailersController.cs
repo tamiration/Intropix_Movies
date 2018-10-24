@@ -31,11 +31,7 @@ namespace Intropix_Movies.Controllers
                  
             }
 
-            //Check if you should filter by location (if it isn't empty)
-            if (!String.IsNullOrEmpty(film_location))
-            {
-                movies = movies.Where(s => s.filming_location.Contains(film_location));
-            }
+            
 
             //Check if you should filter by summary (if it isn't empty)
             if (!String.IsNullOrEmpty(summary))

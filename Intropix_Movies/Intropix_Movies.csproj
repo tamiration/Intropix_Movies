@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20181024182106_remove_filmLocation.cs" />
+    <Compile Remove="Migrations\20181024182106_remove_filmLocation.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="microsoft.entityframeworkcore" Version="2.1.3" />
     <PackageReference Include="microsoft.entityframeworkcore.tools" Version="2.1.3">
