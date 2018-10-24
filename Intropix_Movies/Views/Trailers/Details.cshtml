@@ -54,6 +54,19 @@
         </dd>
     </dl>
 </div>
+
+<div>
+    <iframe width="800" height="800" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&cp=32.0667~34.766699999999986&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+    </iframe>
+    <div style="white-space: nowrap; text-align: center; width: 500px; padding: 6px 0;">
+    </div>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <m:Map CredentialsProvider="AuBZfo1y5fRyE0B-N4C2ojNq50zj0J2-skCr2oempgGnR3Z2MyT99FWr56yraD2c" 
+               Center="47.620574,-122.34942" ZoomLevel="12">
+            <m:Pushpin Location="47.620574,-122.34942"/>
+        </m:Map>
+    </Grid>
+</div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
